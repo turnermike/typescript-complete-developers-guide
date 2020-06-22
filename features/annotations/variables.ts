@@ -25,7 +25,7 @@ let point: { x: number; y: number } = {
 
 // Function
 // the function annotation: ": (i: number) => void"
-// rest of funcgion: "(i: number) => {"...
+// rest of function: "(i: number) => {"...
 const logNumber: (i: number) => void = (i: number) => {
   console.log(i);
 };
