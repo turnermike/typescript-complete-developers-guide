@@ -6,3 +6,10 @@
 
 Using TS Node to run Typescript with node.
 `ts-node index.ts`
+
+## Google APIs
+
+### Maps
+
+Project name: typescript-developers-guide
+API Key: AIzaSyCK-pnH526F7W-6GVNJFwguRv8F9tx-kFo
