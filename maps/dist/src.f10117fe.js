@@ -85177,33 +85177,14 @@ function () {
         lng: 0
       }
     });
-  } // addMarker(mappable: User | Company): void {
-  //   new google.maps.Marker({
-  //     map: this.googleMap,
-  //     position: {
-  //       lat: user.location.lat,
-  //       lng: user.location.lng,
-  //     },
-  //   });
-  // }
+  }
 
-
-  CustomMap.prototype.addUserMarker = function (user) {
+  CustomMap.prototype.addMarker = function (mappable) {
     new google.maps.Marker({
       map: this.googleMap,
       position: {
-        lat: user.location.lat,
-        lng: user.location.lng
-      }
-    });
-  };
-
-  CustomMap.prototype.addCompanyMarker = function (company) {
-    new google.maps.Marker({
-      map: this.googleMap,
-      position: {
-        lat: company.location.lat,
-        lng: company.location.lng
+        lat: mappable.location.lat,
+        lng: mappable.location.lng
       }
     });
   };
@@ -85212,6 +85193,29 @@ function () {
 }();
 
 exports.CustomMap = CustomMap;
+/* ==========================================================================
+  before using a single method for adding markers
+  - this example is using one method for User and one for Company
+  ========================================================================== */
+//   addUserMarker(user: User): void {
+//     new google.maps.Marker({
+//       map: this.googleMap,
+//       position: {
+//         lat: user.location.lat,
+//         lng: user.location.lng,
+//       },
+//     });
+//   }
+//   addCompanyMarker(company: Company): void {
+//     new google.maps.Marker({
+//       map: this.googleMap,
+//       position: {
+//         lat: company.location.lat,
+//         lng: company.location.lng,
+//       },
+//     });
+//   }
+// }
 },{}],"src/index.ts":[function(require,module,exports) {
 "use strict";
 
@@ -85230,10 +85234,11 @@ var user = new User_1.User(); // console.log(user);
 var company = new Company_1.Company(); // console.log(company);
 // add markers
 
-var customMap = new CustomMap_1.CustomMap('map');
-customMap.addUserMarker(user);
-customMap.addCompanyMarker(company); // customMap.addMarker(user);
-// customMap.addMarker(company);
+var customMap = new CustomMap_1.CustomMap('map'); // customMap.addUserMarker(user);
+// customMap.addCompanyMarker(company);
+
+customMap.addMarker(user);
+customMap.addMarker(company);
 },{"./User":"src/User.ts","./Company":"src/Company.ts","./CustomMap":"src/CustomMap.ts"}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
