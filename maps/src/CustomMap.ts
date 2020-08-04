@@ -1,13 +1,13 @@
-import { User } from './User';
-import { Company } from './Company';
+// import { User } from './User';
+// import { Company } from './Company';
 
 // instructions to every other class
 // on how they can be an argument to 'addMarker' method
 interface Mappable {
   location: {
-    lat: number,
-    lng: number,
-  }
+    lat: number;
+    lng: number;
+  };
 }
 
 export class CustomMap {
@@ -24,40 +24,46 @@ export class CustomMap {
   }
 
   addMarker(mappable: Mappable): void {
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: mappable.location.lat,
         lng: mappable.location.lng,
       },
     });
+
+    // add eventListener to marker
+    marker.addListener('click', () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: 'Hi there!',
+      });
+
+      infoWindow.open(this.googleMap, marker);
+    });
   }
-
-
-
 
   /* ==========================================================================
     before using a single method for adding markers
     - this example is using one method for User and one for Company
     ========================================================================== */
 
-//   addUserMarker(user: User): void {
-//     new google.maps.Marker({
-//       map: this.googleMap,
-//       position: {
-//         lat: user.location.lat,
-//         lng: user.location.lng,
-//       },
-//     });
-//   }
+  //   addUserMarker(user: User): void {
+  //     new google.maps.Marker({
+  //       map: this.googleMap,
+  //       position: {
+  //         lat: user.location.lat,
+  //         lng: user.location.lng,
+  //       },
+  //     });
+  //   }
 
-//   addCompanyMarker(company: Company): void {
-//     new google.maps.Marker({
-//       map: this.googleMap,
-//       position: {
-//         lat: company.location.lat,
-//         lng: company.location.lng,
-//       },
-//     });
-//   }
-// }
+  //   addCompanyMarker(company: Company): void {
+  //     new google.maps.Marker({
+  //       map: this.googleMap,
+  //       position: {
+  //         lat: company.location.lat,
+  //         lng: company.location.lng,
+  //       },
+  //     });
+  //   }
+}

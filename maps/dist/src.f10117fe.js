@@ -85159,7 +85159,8 @@ function () {
 
 exports.Company = Company;
 },{"faker":"node_modules/faker/index.js"}],"src/CustomMap.ts":[function(require,module,exports) {
-"use strict";
+"use strict"; // import { User } from './User';
+// import { Company } from './Company';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -85180,12 +85181,21 @@ function () {
   }
 
   CustomMap.prototype.addMarker = function (mappable) {
-    new google.maps.Marker({
+    var _this = this;
+
+    var marker = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: mappable.location.lat,
         lng: mappable.location.lng
       }
+    }); // add eventListener to marker
+
+    marker.addListener('click', function () {
+      var infoWindow = new google.maps.InfoWindow({
+        content: 'Hi there!'
+      });
+      infoWindow.open(_this.googleMap, marker);
     });
   };
 
@@ -85193,29 +85203,6 @@ function () {
 }();
 
 exports.CustomMap = CustomMap;
-/* ==========================================================================
-  before using a single method for adding markers
-  - this example is using one method for User and one for Company
-  ========================================================================== */
-//   addUserMarker(user: User): void {
-//     new google.maps.Marker({
-//       map: this.googleMap,
-//       position: {
-//         lat: user.location.lat,
-//         lng: user.location.lng,
-//       },
-//     });
-//   }
-//   addCompanyMarker(company: Company): void {
-//     new google.maps.Marker({
-//       map: this.googleMap,
-//       position: {
-//         lat: company.location.lat,
-//         lng: company.location.lng,
-//       },
-//     });
-//   }
-// }
 },{}],"src/index.ts":[function(require,module,exports) {
 "use strict";
 
