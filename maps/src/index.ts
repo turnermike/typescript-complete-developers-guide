@@ -10,6 +10,7 @@ const company = new Company();
 
 // add markers
 const customMap = new CustomMap('map');
+
 // customMap.addUserMarker(user);
 // customMap.addCompanyMarker(company);
 customMap.addMarker(user);
