@@ -20,3 +20,14 @@ Inside the 'maps' directory, run:
 
 Project name: typescript-developers-guide
 API Key: AIzaSyCK-pnH526F7W-6GVNJFwguRv8F9tx-kFo
+
+## Sort App
+
+## Notes
+
+Ran `tsc --init` to initialize TypeScript Config file.
+
+## Run It
+
+Inside the 'sort' directory, run:
+`tsc -w`
