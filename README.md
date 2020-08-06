@@ -27,7 +27,19 @@ API Key: AIzaSyCK-pnH526F7W-6GVNJFwguRv8F9tx-kFo
 
 Ran `tsc --init` to initialize TypeScript Config file.
 
+Setup Build
+`npm init -y`
+`npm install --save nodemon concurrently`
+
 ## Run It
 
-Inside the 'sort' directory, run:
-`tsc -w`
+### Using Concurrently and Nodemon
+
+`npm start`
+
+### Manual
+
+1. Build via TypeScript Compiler:
+   `tsc -w`
+2. Run node app:
+   `nodemon build/index.js`
