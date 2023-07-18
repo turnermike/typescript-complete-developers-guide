@@ -2,10 +2,27 @@
 
 [https://www.udemy.com/course/typescript-the-complete-developers-guide](https://www.udemy.com/course/typescript-the-complete-developers-guide)
 
+<br>
+
+# Run It
+
+## Using Concurrently and Nodemon
+
+`npm start`
+
+## Manual
+
+1. Build via TypeScript Compiler:
+   `tsc -w`
+2. Run node app:
+   `nodemon build/index.js`
+
 ## Run Typescript Files
 
 Using TS Node to run Typescript with node.
 `ts-node index.ts`
+
+<br>
 
 # Google Maps App
 
@@ -21,7 +38,9 @@ Inside the 'maps' directory, run:
 Project name: typescript-developers-guide
 API Key: AIzaSyCK-pnH526F7W-6GVNJFwguRv8F9tx-kFo
 
-## Sort App
+<br>
+
+# Sort App
 
 ## Notes
 
@@ -31,15 +50,4 @@ Setup Build
 `npm init -y`
 `npm install --save nodemon concurrently`
 
-## Run It
-
-### Using Concurrently and Nodemon
-
-`npm start`
-
-### Manual
-
-1. Build via TypeScript Compiler:
-   `tsc -w`
-2. Run node app:
-   `nodemon build/index.js`
+<br>
